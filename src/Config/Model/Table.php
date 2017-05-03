@@ -6,7 +6,7 @@ use Config\Model\Conn;
 
 use Config\Controller\Error;
 
-class Table
+abstract class Table
 {
     /**
      * Atributo que receberá a conexão com o banco
@@ -46,8 +46,10 @@ class Table
             return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
         } catch (PDOException $e) {
+
             $error = new Error();
             $error->errorMessage("Error: não foi possível encontrar os dados. Verifique se os dados estão do banco estão corretos. ".$e->getMessage());
+
         }
     }
 
@@ -78,8 +80,10 @@ class Table
             return $data[0];
 
         } catch (PDOException $e) {
+
             $error = new Error();
             $error->errorMessage("Error: não foi possível encontrar o dado. Verifique se os dados estão corretos. ".$e->getMessage());
+
         }
     }
 
@@ -119,8 +123,10 @@ class Table
             }
 
         } catch (PDOException $e) {
+
             $error = new Error();
             $error->errorMessage("Error: não foi possível inserir o dado. Verifique se os dados corretos. ".$e->getMessage());
+
         }
     }
 
@@ -151,8 +157,10 @@ class Table
             }
 
         } catch (PDOException $e) {
+
             $error = new Error();
             $error->errorMessage("Error: não foi possível deletar o dado. Verifique se os dados estão corretos. ".$e->getMessage());
+
         }
     }
 
@@ -182,8 +190,10 @@ class Table
             return true;
 
         } catch (PDOException $e) {
+
             $error = new Error();
             $error->errorMessage("Error: não foi possível atualizar o dado. Verifique se os dados estão corretos. ".$e->getMessage());
+            
         }
     }
 }
