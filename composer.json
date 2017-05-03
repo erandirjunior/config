@@ -1,6 +1,6 @@
 {
     "name" : "config/little",
-    "description" : "Arquivos de configuração do framework little",
+    "description" : "Arquivos de configuração do framework little.",
     "authors" : [{
         "name": "Antonio Erandir Feitosa Soares Junior",
         "email": "aefs12junior@gmail.com"
