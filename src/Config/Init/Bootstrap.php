@@ -96,7 +96,16 @@ class Bootstrap
     {
         if ($url == $route[0]) {
 
+
             $class = "App\\Controllers\\".ucfirst($route[1]);
+
+            if (!class_exists($class)) {
+
+                $error = new Error();
+                $error->errorMessage("Error: classe não existe. Verifique seu arquivo web.php ou na pasta App/Controllers.");
+                exit();
+
+            }
 
             $instance = new $class;
 
