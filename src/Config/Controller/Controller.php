@@ -44,6 +44,7 @@ abstract class Controller
      * Retorna o valor de um campo de formulário enviado pelo método post
      * 
      * @param  string $post name do input
+     * 
      * @return string       retorna um ou todos os valores dos campos de um formulário
      */
     public function input($post = null)
