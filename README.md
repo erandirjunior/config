@@ -2,7 +2,7 @@
 
 ## O que são esses arquivos?  
 
-São os arquivos de configuração do framework little. Esses arquivos ditam a forma como o framewrok funciona.  
+São os arquivos de configuração do framework little. Esses arquivos ditam a forma como o framework funciona.  
 
 ## Diretórios
 
