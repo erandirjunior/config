@@ -12,6 +12,10 @@ class Bootstrap
      */
     private $routes;
 
+    /**
+     * Recebe a quantidade de erros de rota não encontrada.
+     * @var integer
+     */
     private $urlError = 0;
 
     /**
@@ -50,11 +54,13 @@ class Bootstrap
                 // obtendo quantos caracteres tem na url
                 $tamanhoDaUrl = strlen($url);
 
+                // verifica se a quantidade de caracteres da url é maior que a quantidade de caracteres da rota
                 if ($tamanhoDaUrl > $tamanhoDaRota) {
 
                     // cortando a url pelo tamanho da rota
                     $url = substr($url, 0, $tamanhoDaRota);
 
+                    // compara se o vlaor da $url é igual ao valor da $rotaTratada
                     if (strcmp($url,$rotaTratada) === 0){
 
                         // substituindo o valor da rota pelo valor da url
@@ -125,7 +131,7 @@ class Bootstrap
         if ($value == $this->urlError) {
 
             $error = new Error();
-            $error->errorMessage("Error: caminho não existe. Verifique no arquivo web.php.");
+            $error->errorMessage("Error: rota não existe. Verifique no arquivo web.php.");
 
         }
     }
